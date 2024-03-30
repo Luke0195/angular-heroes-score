@@ -1,4 +1,1 @@
-<div class="hero-container">
-  <div>{{ hero.id }}</div>
-  <span> {{ hero.name }}</span>
-</div>
+<app-heroes-list *ngFor="let hero of heroes" [hero]="hero"></app-heroes-list>
