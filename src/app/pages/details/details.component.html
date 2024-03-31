@@ -1,9 +1,11 @@
 <div>
   <h1>Details</h1>
   <h2>Magneta Details</h2>
-  <form>
+  <form [formGroup]="form">
     <span> Id: {{ hero.id }}</span>
-    <div>Name:{{ hero.name }}<input type="text" /></div>
+    <div>
+      Name:{{ hero.name }}<input type="text" [defaultValue]="hero.name" />
+    </div>
     <a routerLink="/"> Back</a>
   </form>
 </div>

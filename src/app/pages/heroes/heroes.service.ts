@@ -25,6 +25,6 @@ export class HeroesService {
     const response = await fetch(`${this.baseUrl}/data/${id}`).then((data) =>
       data.json()
     );
-    return response || {};
+    return response;
   }
 }
