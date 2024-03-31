@@ -1,7 +1,10 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from '../app/pages/home/home.component';
-import { DashboardComponent } from '../app/pages/dashboard/dashboard.component';
-import { HeroesComponent } from './pages/heroes';
+import {
+  HomeComponent,
+  DashboardComponent,
+  HeroesComponent,
+  DetailsComponent,
+} from './pages';
 
 export const routes: Routes = [
   {
@@ -19,5 +22,10 @@ export const routes: Routes = [
         title: 'heroes',
       },
     ],
+  },
+  {
+    path: 'details/:id',
+    component: DetailsComponent,
+    title: 'Atualizar',
   },
 ];

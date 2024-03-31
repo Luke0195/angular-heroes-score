@@ -1,6 +1,8 @@
-<div class="hero-container">
-  <div class="hero-item">
-    <div>#{{hero.id}}</div>
-    <span>{{hero.name}}</span>
+<a [routerLink]="['/details', hero.id]" [state]="{hero:hero}">
+  <div class="hero-container">
+    <div class="hero-item">
+      <div>#{{hero.id}}</div>
+      <span>{{hero.name}}</span>
+    </div>
   </div>
-</div>
+</a>
