@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, ActivatedRoute, Router } from '@angular/router';
 import { Hero } from '../../pages/heroes/models/hero';
 
@@ -13,7 +13,7 @@ type RouteData = {
   styleUrl: './details.component.scss',
 })
 export class DetailsComponent {
-  hero: Hero;
+  hero!: Hero;
   route: ActivatedRoute = inject(ActivatedRoute);
   router: Router;
   id = -1;
@@ -23,6 +23,5 @@ export class DetailsComponent {
     this.id = Number(this.route.snapshot.params['id']);
     const { hero } = router.getCurrentNavigation()?.extras.state as RouteData;
     this.hero = hero;
-    console.log(this.hero);
   }
 }
