@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterModule } from '@angular/router';
-import { HeaderComponent } from '../../components/header';
 
+import { HeaderComponent } from '../../components/header';
 @Component({
   selector: 'app-home',
   standalone: true,

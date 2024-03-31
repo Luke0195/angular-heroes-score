@@ -1,6 +1,7 @@
+import { HeroesService } from './../heroes/heroes.service';
 import { CommonModule } from '@angular/common';
-import { Component, Output, EventEmitter, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Hero } from '../heroes/models/hero';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,11 +11,12 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent {
-  //eslint-disable-next-line
-  @Output() eventData: EventEmitter<any> = new EventEmitter();
+  topHeroes: Hero[] = [];
+  HeroesService = inject(HeroesService);
 
-  //eslint-disable-next-line
-  activeRoute(value: any) {
-    console.log('Value', value);
+  constructor() {
+    this.HeroesService.getTopHeroes().then((response) => {
+      this.topHeroes = response;
+    });
   }
 }

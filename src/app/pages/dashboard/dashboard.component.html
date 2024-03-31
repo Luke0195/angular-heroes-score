@@ -1,6 +1,8 @@
 <div class="dashboard-container">
   <h1>Top Heroes</h1>
   <div class="heroes-container">
-    <ul></ul>
+    <ul>
+      <li *ngFor="let hero of topHeroes">{{ hero.name }}</li>
+    </ul>
   </div>
 </div>
