@@ -20,4 +20,11 @@ export class HeroesService {
     const result = await this.findAllHeroes();
     return result.splice(0, 4) || [];
   }
+
+  async getById(id: number): Promise<Hero> {
+    const response = await fetch(`${this.baseUrl}/data/${id}`).then((data) =>
+      data.json()
+    );
+    return response || {};
+  }
 }

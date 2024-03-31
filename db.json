@@ -1,27 +1,27 @@
 {
   "data": [
     {
-      "id": 1,
-      "name": "Dr Nice"
+      "name": "ByHero",
+      "id": "1"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Bombasto"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Celeritas"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Magneta"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "RubberMan"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Dynama"
     }
   ]
