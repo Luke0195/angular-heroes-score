@@ -22,7 +22,7 @@ export class DetailsComponent {
   id = -1;
 
   form = new FormGroup({
-    name: new FormControl(''),
+    name: new FormControl({ value: '', disabled: false }),
   });
 
   constructor(router: Router) {
@@ -34,8 +34,6 @@ export class DetailsComponent {
   }
 
   async submitForm(id: number) {
-    console.log(id);
-    console.log(this.form);
-    //await this.detailsService.updateData(id, name);
+    await this.detailsService.updateData(id, this.form.value.name ?? '');
   }
 }

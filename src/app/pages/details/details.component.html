@@ -4,7 +4,13 @@
   <form [formGroup]="form">
     <span> Id: {{ hero.id }}</span>
     <div>
-      Name:{{ hero.name }}<input type="text" [defaultValue]="hero.name" />
+      Name:{{ hero.name
+      }}<input
+        type="text"
+        [defaultValue]="hero.name"
+        (blur)="submitForm(id)"
+        formControlName="name"
+      />
     </div>
     <a routerLink="/"> Back</a>
   </form>
