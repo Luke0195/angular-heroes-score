@@ -2,7 +2,11 @@
   <h1>Top Heroes</h1>
   <div class="heroes-container">
     <ul>
-      <li *ngFor="let hero of topHeroes">{{ hero.name }}</li>
+      <li *ngFor="let hero of topHeroes">
+        <a [routerLink]="['details', hero.id]">
+          {{ hero.name }}
+        </a>
+      </li>
     </ul>
   </div>
 </div>

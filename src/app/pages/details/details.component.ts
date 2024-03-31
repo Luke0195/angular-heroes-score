@@ -21,7 +21,5 @@ export class DetailsComponent {
   constructor(router: Router) {
     this.router = router;
     this.id = Number(this.route.snapshot.params['id']);
-    const { hero } = router.getCurrentNavigation()?.extras.state as RouteData;
-    this.hero = hero;
   }
 }
