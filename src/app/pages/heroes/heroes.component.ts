@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { HeroesService } from './heroes.service';
 import { HeroesListComponent } from './components/heroes-list/heroes-list.component';
 import { Hero } from './models/hero';
 @Component({
@@ -10,30 +11,12 @@ import { Hero } from './models/hero';
   styleUrl: './heroes.component.scss',
 })
 export class HeroesComponent {
-  heroes: Hero[] = [
-    {
-      id: 1,
-      name: 'Dr Nice',
-    },
-    {
-      id: 2,
-      name: 'Bombasto',
-    },
-    {
-      id: 3,
-      name: 'Celeritas',
-    },
-    {
-      id: 4,
-      name: 'Magneta',
-    },
-    {
-      id: 5,
-      name: 'RubberMan',
-    },
-    {
-      id: 6,
-      name: 'Dynama',
-    },
-  ];
+  heroes: Hero[] = [];
+  heroesServices = inject(HeroesService);
+
+  constructor() {
+    this.heroesServices.findAllHeroes().then((response) => {
+      this.heroes = response;
+    });
+  }
 }
